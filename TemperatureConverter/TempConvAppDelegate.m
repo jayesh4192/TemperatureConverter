@@ -7,6 +7,7 @@
 //
 
 #import "TempConvAppDelegate.h"
+#import "TempConvViewController.h"
 
 @implementation TempConvAppDelegate
 
@@ -14,7 +15,10 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    TempConvViewController *tcvc = [[TempConvViewController alloc] init];
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:tcvc];
+    self.window.rootViewController = nvc;
+     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
